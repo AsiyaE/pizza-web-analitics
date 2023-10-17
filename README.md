@@ -5,4 +5,4 @@
 
 
 запустить: 
-```npm start```
+```npm run start```
