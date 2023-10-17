@@ -1,0 +1,51 @@
+.full-pizza {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  
+}
+
+.button-back{
+  display:flex;
+  align-items: center;
+  gap:8px;
+}
+
+.about-pizza {
+  display: flex;
+  gap: 20px;
+
+
+  img {
+    max-width: 300px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 300px;
+
+	.pizza-price{
+		font-size: 20px;
+		color: $orange;
+	}
+
+    &-ingredients {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .full-pizza {
+
+	align-items: center;
+  }
+  .about-pizza {
+    flex-direction: column;
+	align-items: center;
+  }
+}
