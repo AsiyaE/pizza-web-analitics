@@ -40,7 +40,7 @@ const FullPizza = () => {
           <h4 className="pizza-price">от {pizza.price} ₽</h4>
         </div>
       </div>
-      <Link to="/" className="button button--outline  button--add go-back-btn button-back">
+      <Link to="/home" className="button button--outline  button--add go-back-btn button-back">
         <svg
           width="8"
           height="14"

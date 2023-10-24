@@ -6,6 +6,7 @@ import { useDispatch, useSelector }  from 'react-redux'
 import { clearItems, selectCart } from '../redux/slices/cartSlice';
 import CartItem from '../components/CartItem'
 import CartEmpty from '../components/CartEmpty';
+import ym from "react-yandex-metrika";
 
 
 const Cart = () => {
@@ -19,6 +20,11 @@ const Cart = () => {
       dispatch(clearItems());
     }
   };
+
+  const finishTask = () => {
+    console.log('finish-task');
+    ym(95153636,'reachGoal','finish-task')
+  }
 
   if (!totalPrice){
     return <CartEmpty />
@@ -108,7 +114,7 @@ const Cart = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/" className="button button--outline button--add go-back-btn">
+            <Link to="/home" className="button button--outline button--add go-back-btn">
               <svg
                 width="8"
                 height="14"
@@ -125,7 +131,7 @@ const Cart = () => {
 
               <span>Вернуться назад</span>
             </Link>
-            <div className="button pay-btn">
+            <div className="button pay-btn" onClick={finishTask}>
               <span>Оплатить сейчас</span>
             </div>
           </div>
