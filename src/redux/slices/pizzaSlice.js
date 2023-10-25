@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getAppVersion } from '../../localStorage/getAppVersion';
 
 
 export const fetchPizzas = createAsyncThunk('pizza/fetchPizzasStatus', async (params) => {
-  const host=(getAppVersion()==='1')?'63b5cb8258084a7af3a08c7f':'652e773e0b8d8ddac0b16d6b';
+  // верхний фильтр работает только по названию пицц
+  const host='652e773e0b8d8ddac0b16d6b';
 
   const { sortBy, order, category, search } = params;
   const { data } = await axios.get(

@@ -6,11 +6,12 @@ export const getAppVersion = () => {
     version = Math.round(Math.random());
     localStorage.setItem(key, version);
   }
+  // todo
   if (Number(version) === 0) {
-    ym(95153636,'reachGoal','versionA')
+    // ym(95153636,'reachGoal','versionA')
   } else {
-    ym(95153636,'reachGoal','versionB')
+    // ym(95153636,'reachGoal','versionB')
   }
-  console.log('App version =', version, '(1-with ingredients search (versionB), 0-without(versionA))');
+  console.log('App version =', version, '(1-with categories filter (versionB), 0-without(versionA))');
   return version;
 };

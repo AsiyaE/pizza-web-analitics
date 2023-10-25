@@ -23,7 +23,8 @@ const Cart = () => {
 
   const finishTask = () => {
     console.log('finish-task');
-    ym(95153636,'reachGoal','finish-task')
+    // todo
+    // ym(95153636,'reachGoal','finish-task')
   }
 
   if (!totalPrice){
