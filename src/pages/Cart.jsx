@@ -6,8 +6,9 @@ import { useDispatch, useSelector }  from 'react-redux'
 import { clearItems, selectCart } from '../redux/slices/cartSlice';
 import CartItem from '../components/CartItem'
 import CartEmpty from '../components/CartEmpty';
+import {getAppVersionAndTask} from "../localStorage/getAppVersion";
 
-
+const [version, task] = getAppVersionAndTask();
 const Cart = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
@@ -21,11 +22,11 @@ const Cart = () => {
   };
 
   const finishTask = () => {
-    console.log('finish-task-1');
-    const startTime = localStorage.getItem('task-1-start-time');
+    console.log('finish-task');
+    const startTime = sessionStorage.getItem('start-time');
     const timeDiff = new Date().getTime() - startTime;
-    console.log('time task 1', timeDiff);
-    window.ym(95153636,'reachGoal','finish-task', {"time": timeDiff})
+    console.log('time', timeDiff);
+    window.ym(95153636,'reachGoal','finish-task', {"version": version, "task": task, "time": timeDiff})
   }
 
   if (!totalPrice){

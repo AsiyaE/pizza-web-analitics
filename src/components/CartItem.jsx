@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 
-
+// todo для version1 необходимо сделать отображение состава в корзине
 const CartItem = ({ id, title, type, size, price, count, imageUrl }) => {
   const dispatch = useDispatch();
 

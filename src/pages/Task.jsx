@@ -1,11 +1,13 @@
 import {Link} from "react-router-dom";
+import {getAppVersionAndTask} from "../localStorage/getAppVersion";
 
+const [version, task] = getAppVersionAndTask();
 const Task = () => {
+
     const startTask = () => {
-      console.log('start-task-1');
+      console.log('start-task');
       const startTime = new Date().getTime();
-      localStorage.setItem('task-1-start-time', startTime);
-      window.ym(95153636,'reachGoal','start-task');
+      sessionStorage.setItem('start-time', startTime);
     }
 
     return (
@@ -16,8 +18,12 @@ const Task = () => {
                     выполнить следующее задание:
                 </p>
                 <p className='task'>
-                    <i>Оформить заказ, состоящий из двух пицц: одна из них должна быть без мяса, другая с
-                        халапеньо. Их необходимо добавить в корзину и оформить заказ, нажав кнопку оплатить.</i>
+                    {task === 'task1' && <i>Оформить заказ, состоящий из двух пицц: одна из них должна быть без мяса, другая с
+                        халапеньо. Их необходимо добавить в корзину и оформить заказ, нажав кнопку оплатить.</i>}
+                    {task === 'task2' && <i>Оформить заказ, состоящий из двух пицц: одна из них должна быть без красного лука, другая с
+                        томатным соусом. Их необходимо добавить в корзину и оформить заказ, нажав кнопку оплатить.</i>}
+                    {task === 'task3' && <i>Оформить заказ, состоящий из двух пицц: одна из них должна быть с кисло-сладким соусом, другая с
+                        ветчиной. Их необходимо добавить в корзину и оформить заказ, нажав кнопку оплатить.</i>}
                 </p>
                 <p className='task'>
                     Как только будете готовы начать, нажмите кнопку Приступить к заданию.

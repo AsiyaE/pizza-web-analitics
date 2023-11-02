@@ -9,7 +9,6 @@ import './scss/app.scss';
 import MainLayout from './layouts/MainLayout';
 import Task from "./pages/Task";
 
-
 function App() {
     return (
         <Routes>

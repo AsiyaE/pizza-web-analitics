@@ -6,6 +6,7 @@ import { addItem, selectCartItemById }  from '../../redux/slices/cartSlice'
 
 const typeNames = ['тонкое', 'традиционное'];
 
+// todo для version3 необходимо сделать отображение состава при наведении
 const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, ingredients=[] }) => {
 
   const dispatch = useDispatch();

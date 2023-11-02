@@ -10,10 +10,9 @@ import Categories from '../components/Categories';
 import Sort, { sortList } from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
-import {getAppVersion} from "../localStorage/getAppVersion";
-// import Pagination from '../components/Pagination';
+import {getAppVersionAndTask} from "../localStorage/getAppVersion";
 
-const version = getAppVersion();
+const [version, task] = getAppVersionAndTask();
 
 const Home = () => {
   const navigate = useNavigate();
@@ -100,7 +99,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="content__top">
-        {(Number(version) === 1) && <Categories value={categoryId} onChangeCategory={onChangeCategory} />}
+        {(version === 'version2') && <Categories value={categoryId} onChangeCategory={onChangeCategory} />}
         <Sort />
       </div>
       <h2 className="content__title">Все пиццы</h2>
