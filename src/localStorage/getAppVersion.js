@@ -1,4 +1,3 @@
-import ym from 'react-yandex-metrika';
 export const getAppVersion = () => {
   const key = 'pizza';
   let version = localStorage.getItem(key);
@@ -8,9 +7,9 @@ export const getAppVersion = () => {
   }
   // todo
   if (Number(version) === 0) {
-    // ym(95153636,'reachGoal','versionA')
+    window.ym(95153636,'reachGoal','versionA')
   } else {
-    // ym(95153636,'reachGoal','versionB')
+    window.ym(95153636,'reachGoal','versionB')
   }
   console.log('App version =', version, '(1-with categories filter (versionB), 0-without(versionA))');
   return version;

@@ -6,7 +6,6 @@ import { useDispatch, useSelector }  from 'react-redux'
 import { clearItems, selectCart } from '../redux/slices/cartSlice';
 import CartItem from '../components/CartItem'
 import CartEmpty from '../components/CartEmpty';
-import ym from "react-yandex-metrika";
 
 
 const Cart = () => {
@@ -22,9 +21,11 @@ const Cart = () => {
   };
 
   const finishTask = () => {
-    console.log('finish-task');
-    // todo
-    // ym(95153636,'reachGoal','finish-task')
+    console.log('finish-task-1');
+    const startTime = localStorage.getItem('task-1-start-time');
+    const timeDiff = new Date().getTime() - startTime;
+    console.log('time task 1', timeDiff);
+    window.ym(95153636,'reachGoal','finish-task', {"time": timeDiff})
   }
 
   if (!totalPrice){

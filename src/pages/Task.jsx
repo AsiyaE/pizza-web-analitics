@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
-import ym from 'react-yandex-metrika';
 
 const Task = () => {
     const startTask = () => {
-      console.log('start-task');
-      // todo
-      // ym(95153636,'reachGoal','start-task');
+      console.log('start-task-1');
+      const startTime = new Date().getTime();
+      localStorage.setItem('task-1-start-time', startTime);
+      window.ym(95153636,'reachGoal','start-task');
     }
 
     return (
