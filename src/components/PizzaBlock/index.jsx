@@ -40,9 +40,10 @@ const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, ingredients=[] }
   return (
   <div className="pizza-block-wrapper">
     <div className="pizza-block">
-      <Link  to={`/pizza/${id}`}>
+      <Link  to={`/pizza/${id}`} style={(version==='version3') ? {pointerEvents: "none"} : null}>
         <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       </Link>
+
       <div className='pizza-block__wrap'>
         <h4 className="pizza-block__title">{title}</h4>
         { (version==='version3') &&(
