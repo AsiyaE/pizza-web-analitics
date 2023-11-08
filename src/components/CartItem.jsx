@@ -2,9 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
+import { getAppVersionAndTask } from '../localStorage/getAppVersion';
 
-// todo для version1 необходимо сделать отображение состава в корзине
-const CartItem = ({ id, title, type, size, price, count, imageUrl }) => {
+
+const [version] = getAppVersionAndTask();
+const CartItem = ({ id, title, type, size, price, count, imageUrl,  ingredients=[] }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
@@ -29,8 +31,15 @@ const CartItem = ({ id, title, type, size, price, count, imageUrl }) => {
         <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       </div>
       <div className="cart__item-info">
-        <h3>{title}</h3>
-        <p>{type}, {size} см.</p>
+        <div className="cart__item-info-type">
+          <h3>{title}</h3>
+          <p>{type}, {size} см.</p>
+        </div>
+        {(version==='version1') &&(
+          <div className="cart__item-info-ing">
+              {ingredients.join(', ')}
+          </div>
+        )}
       </div>
       <div className="cart__item-count">
         <div

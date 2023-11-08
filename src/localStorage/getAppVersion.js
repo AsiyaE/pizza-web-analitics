@@ -6,7 +6,7 @@ export const getAppVersionAndTask = () => {
   }
   version = sessionStorage.getItem('app-version');
   const task = sessionStorage.getItem('task');
-  return [version, task]
+  return [version, task];
 };
 
 export const initYandexValues = (version) => {
@@ -29,11 +29,11 @@ export const initYandexValues = (version) => {
       break;
     case 4:
       setVersionAndTask(3, 2);
-      console.log('App version = 3: Состав пиццы отображается при наведении');
+      console.log('App version = 3: Состав пиццы отображается при нажатии на тултип');
       break;
     case 5:
       setVersionAndTask(4,3);
-      console.log('App version = 4: Есть поиск по ингредиентам');
+      console.log('App version = 4: Нет поиска по ингредиентам');
       break;
     default:
       return;

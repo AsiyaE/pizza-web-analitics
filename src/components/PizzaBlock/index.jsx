@@ -3,10 +3,15 @@ import { useDispatch, useSelector }  from 'react-redux'
 import { Link } from 'react-router-dom';
 
 import { addItem, selectCartItemById }  from '../../redux/slices/cartSlice'
+import { getAppVersionAndTask } from '../../localStorage/getAppVersion';
+import ToolTip from '../Tooltip';
+import ToolTipButton from '../Tooltip/ToolTipButton';
+
 
 const typeNames = ['тонкое', 'традиционное'];
 
-// todo для version3 необходимо сделать отображение состава при наведении
+const [version] = getAppVersionAndTask();
+
 const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, ingredients=[] }) => {
 
   const dispatch = useDispatch();
@@ -24,10 +29,13 @@ const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, ingredients=[] }
       imageUrl,
       type: typeNames[activeType],
       size: sizes[activeSize],
+      ingredients: ingredients,
     };
 
     dispatch(addItem(item));
   }
+
+  const ingredientsList = ingredients.join(', ');
 
   return (
   <div className="pizza-block-wrapper">
@@ -35,7 +43,15 @@ const PizzaBlock = ({ id, title, price, imageUrl, sizes, types, ingredients=[] }
       <Link  to={`/pizza/${id}`}>
         <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       </Link>
-      <h4 className="pizza-block__title">{title}</h4>
+      <div className='pizza-block__wrap'>
+        <h4 className="pizza-block__title">{title}</h4>
+        { (version==='version3') &&(
+          <ToolTip text={ingredientsList} customClass='pizza-block__tooltip'>
+            <ToolTipButton />
+          </ToolTip>
+        )}
+
+      </div>
       <div className="pizza-block__selector">
         <ul>
           {types.map((typeId) => (
