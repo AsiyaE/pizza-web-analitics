@@ -15,19 +15,19 @@ export const initYandexValues = (version) => {
       setVersionAndTask(1,1);
       window.ym(95153636,'reachGoal','version1')
       window.ym(95153636,'reachGoal','task1')
-      console.log('App version = 1: Без фильтров по категориям, состав пиццы отображается в корзине, поиск по названию пицц и ингредиентам');
+      console.log('App version = 1: Нет поиска по ингредиентам, Нет фильтрации по категориям, Состав пиццы НЕ отображается при нажатии на тултип, состав пиццы не отображается в корзине');
       break;
     case 1:
       setVersionAndTask(1,2);
       window.ym(95153636,'reachGoal','version1')
       window.ym(95153636,'reachGoal','task2')
-      console.log('App version = 1: Без фильтров по категориям, состав пиццы отображается в корзине, поиск по названию пицц и ингредиентам');
+      console.log('App version = 1: Нет поиска по ингредиентам, Нет фильтрации по категориям, Состав пиццы НЕ отображается при нажатии на тултип, состав пиццы не отображается в корзине');
       break;
     case 2:
       setVersionAndTask(1,3);
       window.ym(95153636,'reachGoal','version1')
       window.ym(95153636,'reachGoal','task3')
-      console.log('App version = 1: Без фильтров по категориям, состав пиццы отображается в корзине, поиск по названию пицц и ингредиентам');
+      console.log('App version = 1: Нет поиска по ингредиентам, Нет фильтрации по категориям, Состав пиццы НЕ отображается при нажатии на тултип, состав пиццы не отображается в корзине');
       break;
     case 3:
       setVersionAndTask(2,1);
@@ -45,7 +45,7 @@ export const initYandexValues = (version) => {
       setVersionAndTask(4,3);
       window.ym(95153636,'reachGoal','version4')
       window.ym(95153636,'reachGoal','task3')
-      console.log('App version = 4: Нет поиска по ингредиентам, Нет фильтрации по категориям, Состав пиццы НЕ отображается при нажатии на тултип, состав пиццы не отображается в корзине ');
+      console.log('App version = 4: Без фильтров по категориям, состав пиццы отображается в корзине, поиск по названию пицц и ингредиентам');
       break;
     default:
       return;

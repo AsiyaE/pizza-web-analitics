@@ -35,7 +35,7 @@ const CartItem = ({ id, title, type, size, price, count, imageUrl,  ingredients=
           <h3>{title}</h3>
           <p>{type}, {size} см.</p>
         </div>
-        {(version==='version1') &&(
+        {(version==='version4') &&(
           <div className="cart__item-info-ing">
               {ingredients.join(', ')}
           </div>
