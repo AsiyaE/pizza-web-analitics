@@ -35,6 +35,8 @@ const cartSlice = createSlice({
         if (findItem.count > 0){
           findItem.count--;
           if (findItem.count === 0){
+            console.log('Удаление пиццы')
+            window.ym(95153636, 'reachGoal', 'delete-pizza')
             state.items = state.items.filter(obj => obj.id !== action.payload);
           }
         }

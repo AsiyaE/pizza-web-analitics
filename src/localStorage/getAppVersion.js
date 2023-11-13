@@ -1,3 +1,5 @@
+import {tasks} from "../result/Tasks";
+
 export const getAppVersionAndTask = () => {
   let version = sessionStorage.getItem('app-version');
   if ((version === undefined) || (version === null)) {
@@ -55,4 +57,5 @@ export const initYandexValues = (version) => {
 export const setVersionAndTask = (version, task) => {
   sessionStorage.setItem('app-version', `version${version}`);
   sessionStorage.setItem('task', `task${task}`);
+  sessionStorage.setItem('task-description', tasks[`task${task}`].description);
 }
