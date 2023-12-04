@@ -123,6 +123,10 @@ body {
     .content__title {
       margin: 0;
     }
+
+    @media (max-width: 500px){
+      margin-top: 50px;
+    }
   }
 }
 
@@ -138,7 +142,7 @@ body {
     align-items: center;
     font-size: 32px;
 
-    svg {
+    img {
       position: relative;
       top: -2px;
       width: 30px;
@@ -147,6 +151,15 @@ body {
       path {
         stroke: $black;
         stroke-width: 1.9;
+      }
+    }
+
+    @media (max-width: 500px){
+      font-size: 24px;
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
       }
     }
   }
@@ -178,6 +191,14 @@ body {
       }
       span {
         color: darken($color: #b6b6b6, $amount: 50);
+      }
+    }
+
+    @media (max-width: 500px){
+      span {
+        font-size: 16px;
+        margin-left: 4px;
+
       }
     }
  }
@@ -297,6 +318,70 @@ body {
     }
   }
 
+  @media (max-width: 600px){
+    .content__items{
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    .cart__item {
+      flex-direction: column;
+      flex-basis: 180px;
+      flex-shrink: 0;
+      height: 380px;
+      align-items: center;
+      padding-bottom: 30px;
+
+
+      h3{
+        font-size: 20px;
+        text-align: center;
+      }
+
+      &-img{
+        width:auto;
+        order:2;
+      }
+  
+      &-info{
+        width:auto;
+        order:3;
+        &-type{
+          width: 160px;
+          text-align: center;
+        }
+        &-ing{
+          font-size: 12px;
+          
+        }
+      }
+      &-count{
+        margin-top: auto;
+        width:auto;
+        gap:10px;
+        order:4;
+  
+      }
+
+      
+      &-price{
+        white-space:nowrap;
+        width:max-content;
+        order:5;
+        
+      }
+  
+      &-remove{
+        order:1;
+        margin-left: auto;
+      }
+    }
+
+    .with-ingredients{
+      height: 450px;
+    }
+  }
+
   &__bottom {
     margin: 50px 0;
 
@@ -319,6 +404,7 @@ body {
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
+      gap:20px;
 
       .go-back-btn {
         display: flex;
@@ -358,6 +444,24 @@ body {
         width: 210px;
         padding: 16px;
       }
+    }
+
+    @media (max-width: 600px){
+
+        &-details { 
+          flex-direction: column;
+          gap: 6px;
+          span{
+            font-size: 18px;
+          }
+        }
+        .go-back-btn{
+          svg{
+            display: none;
+          }
+        }
+        
+
     }
   }
 
@@ -408,6 +512,6 @@ body {
 }
 
 .result-description{
-  width: 350px;
+  max-width: 350px;
   font-weight: 900;
 }

@@ -32,10 +32,11 @@
 .task-tooltip {
   background: $orange;
   color: white;
-  opacity: 0.9;
+  opacity: 0.8;
   border-radius: 12px;
   height: fit-content;
-  left: 100%;
+  width: 240px;
   z-index: 1000;
-  top: 0;
+  top: 50px;
+  left:-20px;
 }

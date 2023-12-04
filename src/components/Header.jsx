@@ -27,7 +27,7 @@ function Header() {
                     <img width="38" src={logoSvg} alt="Pizza logo"/>
                     <div>
                         <Link to="/home"><h1>React Pizza</h1></Link>
-                        <ToolTip text={task} isTaskTooltip>
+                        <ToolTip text={task} isTaskTooltip tooltipClass='header__tooltip' >
                             <button style={{width: '180px'}}
                                     className='button'
                                     onClick={handleClick}>{isTaskVisible ? 'Скрыть задание' : 'Посмотреть задание'}</button>
